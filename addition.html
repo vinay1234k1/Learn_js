@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Input Form</title>
+</head>
+<body>
+    <form id="numberForm" onsubmit="return calculateSum(event)">
+        <h1>Enter First Number</h1>
+        <input type="number" id="firstNumber" required>
+        <h1>Enter Second Number</h1>
+        <input type="number" id="secondNumber" required>
+        <button type="submit">Calculate Sum</button>
+    </form>
+    <h2 id="result"></h2>
+
+    <script>
+        function calculateSum(event) {
+            event.preventDefault(); // Prevent form submission
+            const firstNumber = parseFloat(document.getElementById('firstNumber').value);
+            const secondNumber = parseFloat(document.getElementById('secondNumber').value);
+            const sum = firstNumber + secondNumber;
+            document.getElementById('result').innerText = 'Sum: ' + sum;
+            return false; // Prevent further default action
+        }
+    </script>
+</body>
+</html>
